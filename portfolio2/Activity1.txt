@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glayza Crismundo</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #000; /* black background */
+      margin: 0;
+      padding: 0;
+      color: #f5f5f5;
+    }
+    header {
+      text-align: center;
+      padding: 30px;
+      background: linear-gradient(90deg, #ff82a9, #7a5cff);
+      color: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+    header img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+      cursor: pointer;
+    }
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+    section {
+      margin-bottom: 20px;
+      background: #1c1c1c;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.8);
+    }
+    h2 {
+      color: #ff82a9;
+      border-bottom: 2px solid #7a5cff;
+      padding-bottom: 5px;
+    }
+    blockquote {
+      font-style: italic;
+      border-left: 5px solid #ff82a9;
+      padding-left: 10px;
+      color: #ccc;
+    }
+    .links a {
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(90deg, #ff82a9, #7a5cff);
+      padding: 10px 15px;
+      border-radius: 25px;
+      margin: 5px;
+      display: inline-block;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .links a:hover {
+      background: linear-gradient(90deg, #7a5cff, #ff82a9);
+      transform: scale(1.05);
+    }
+
+    /* Skills section */
+    .skills-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      padding: 10px 0;
+      scrollbar-width: none;
+    }
+    .skills-container::-webkit-scrollbar {
+      display: none;
+    }
+    .skill-card {
+      flex: 0 0 auto;
+      width: 180px;
+      height: 240px;
+      background: #222;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      text-align: center;
+      padding: 15px;
+      transition: transform 0.3s;
+    }
+    .skill-card:hover {
+      transform: translateY(-8px);
+    }
+
+    /* Circular progress */
+    .circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: conic-gradient(#ff82a9 var(--percent), #333 var(--percent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px auto;
+      box-shadow: 0 0 10px #ff82a9, 0 0 20px #7a5cff;
+    }
+    .circle span {
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+    }
+    .skill-name {
+      font-weight: bold;
+      margin-top: 10px;
+      color: #ff82a9;
+    }
+    .skill-icon {
+      font-size: 28px;
+      margin-top: 5px;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.5);
+    }
+    .lightbox span {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://i.postimg.cc/vmxdxKnf/inbound7056191095769549085.jpg" alt="Glayza Crismundo" onclick="openLightbox()">
+    <h1>Glayza Crismundo</h1>
+    <p>BS Information Technology - 3rd Year</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>About Me</h2>
+      <p>A passionate technology student who enjoys learning and exploring new tools that can help solve real-world problems. I have a curious mind and a drive to continuously improve my skills. I value teamwork, creativity, and persistence in achieving goals.</p>
+      <p><strong>Goal after graduation:</strong> To become a skilled full-stack web developer and contribute to impactful projects that benefit communities.</p>
+    </section>
+
+    <section>9
+      <h2>Basic Skills</h2>
+      <div class="skills-container">
+        <div class="skill-card" style="--percent: 25%;">
+          <div class="circle"><span>25%</span></div>
+          <div class="skill-name">HTML</div>
+          <i class="fab fa-html5 skill-icon" style="color:#e34c26;"></i>
+        </div>
+        <div class="skill-card" style="--percent: 20%;">
+          <div class="circle"><span>20%</span></div>
+          <div class="skill-name">CSS</div>
+          <i class="fab fa-css3-alt skill-icon" style="color:#264de4;"></i>
+        </div>
+        <div class="skill-card" style="--percent: 25%;">
+          <div class="circle"><span>25%</span></div>
+          <div class="skill-name">JavaScript</div>
+          <i class="fab fa-js-square skill-icon" style="color:#f7df1e;"></i>
+        </div>
+        <div class="skill-card" style="--percent: 10%;">
+          <div class="circle"><span>10%</span></div>
+          <div class="skill-name">Python</div>
+          <i class="fab fa-python skill-icon" style="color:#3776ab;"></i>
+        </div>
+        <div class="skill-card" style="--percent: 10%;">
+          <div class="circle"><span>10%</span></div>
+          <div class="skill-name">UI/UX</div>
+          <i class="fas fa-pencil-ruler skill-icon" style="color:#ff82a9;"></i>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Favorite Quote</h2>
+      <blockquote>"Success is not final, failure is not fatal: It is the courage to continue that counts."</blockquote>
+    </section>
+
+    <section>
+      <h2>Contact Me</h2>
+      <div class="links">
+        <a href="https://www.facebook.com/glayza.torres.crismundo">Facebook</a>
+        <a href="mailto:glayzacrismundo09@gmail.com">Email</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span onclick="closeLightbox()">&times;</span>
+    <img src="https://i.postimg.cc/vmxdxKnf/inbound7056191095769549085.jpg" alt="Full Image">
+  </div>
+
+  <script>
+    function openLightbox() {
+      document.getElementById('lightbox').style.display = 'flex';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
